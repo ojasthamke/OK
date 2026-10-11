@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>OrderKart - Redirecting to Google Play</title>
+
+  <!-- Open Graph / Meta tags for Instagram preview -->
+  <meta property="og:title" content="OrderKart on Google Play">
+  <meta property="og:description" content="Download OrderKart on Google Play Store.">
+  <meta property="og:type" content="website">
+
+  <!-- Fallback meta refresh for non-JS browsers (0 seconds) -->
+  <meta http-equiv="refresh" content="0; url=https://play.google.com/store/apps/details?id=com.orderkart.app">
+
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --btn-text: #ffffff;
+      --ring: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .container {
+      background: var(--card-bg);
+      border: 1px solid var(--ring);
+      border-radius: 20px;
+      padding: 36px 24px;
+      max-width: 380px;
+      width: 100%;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 16px -4px rgba(2, 132, 199, 0.3);
+    }
+
+    .app-icon svg {
+      width: 44px;
+      height: 44px;
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .status-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.4;
+    }
+
+    .spinner {
+      width: 22px;
+      height: 22px;
+      border: 2.5px solid #e2e8f0;
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      display: inline-block;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--primary);
+      color: var(--btn-text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 24px;
+      border-radius: 12px;
+      width: 100%;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      cursor: pointer;
+    }
+
+    .btn-download:hover,
+    .btn-download:active {
+      background-color: var(--primary-hover);
+      transform: scale(0.99);
+    }
+
+    .btn-download svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .fallback-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .fallback-note a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="app-icon" aria-hidden="true">
+      <!-- Shopping Bag / Cart Vector Icon -->
+      <svg viewBox="0 0 24 24">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <path d="M16 10a4 4 0 0 1-8 0"></path>
+      </svg>
+    </div>
+
+    <h1>OrderKart</h1>
+    
+    <div class="spinner" id="spinner" aria-hidden="true"></div>
+    <p class="status-text" id="statusMessage">Redirecting you to Google Play Store...</p>
+
+    <a 
+      id="playStoreBtn"
+      class="btn-download" 
+      href="https://play.google.com/store/apps/details?id=com.orderkart.app"
+      rel="noopener noreferrer"
+    >
+      <!-- Google Play Vector Icon -->
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3.609 1.814L13.792 12 3.61 22.186a1.986 1.986 0 0 1-.61-1.428V3.242c0-.53.21-1.04.61-1.428zM15.207 13.414l2.457 2.457-11.45 6.611 8.993-9.068zM15.207 10.586L6.214 1.518l11.45 6.611-2.457 2.457zM16.621 12l2.979-1.72a1.5 1.5 0 0 1 0 2.58L16.621 12z"/>
+      </svg>
+      <span>Download OrderKart</span>
+    </a>
+
+    <p class="fallback-note">
+      If you are not redirected automatically, tap the button above.
+    </p>
+  </main>
+
+  <script>
+    (function () {
+      var playStoreUrl = "https://play.google.com/store/apps/details?id=com.orderkart.app";
+
+      // Execute redirect with replace() within 300ms (max 500ms requirement)
+      // window.location.replace avoids polluting the browser back-stack
+      setTimeout(function () {
+        try {
+          window.location.replace(playStoreUrl);
+        } catch (e) {
+          window.location.href = playStoreUrl;
+        }
+      }, 300);
+    })();
+  </script>
+</body>
+</html>
